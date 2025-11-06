@@ -1,0 +1,22 @@
+.newTask-container{
+    display: flex;
+    margin-top: 3.5%;
+    margin-left: 15rem;
+    margin-right: 70rem; 
+}
+
+.newTask-content{
+    margin-left: 2%;
+}
+
+.newTask-create-button{
+    padding: 0.5rem;
+    margin-left: 40%;
+    border-width: 2;
+    border-color: rgb(246, 218, 59);
+    border-radius: 5px;
+    background-color: rgb(243, 242, 230);
+    font-size: 12px;
+    font-weight: bold;
+
+}
