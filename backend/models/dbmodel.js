@@ -3,24 +3,12 @@ const mongoose = require('mongoose');
 
 //defining the schema
 const appData = new mongoose.Schema({
-
-    firstName: {
-        type: String,
-        required: true,
-    },
-    lastName: {
+    task: {
         type: String,
     },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    tasks: {
-        type: [String],
-        default: [],
+    taskId: {
+        type: String
     }
-
 });
 
 
@@ -32,8 +20,8 @@ mongoose
 
 
 //creating a model
-const User = mongoose.model("user", appData);
+const Task = mongoose.model("task", appData);
 
 
 //exporting model
-module.exports = { User };
+module.exports = { Task };

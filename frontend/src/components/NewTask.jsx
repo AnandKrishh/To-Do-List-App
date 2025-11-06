@@ -1,6 +1,7 @@
-import { v4 as uuidv4 } from "uuid";
 import { useState } from 'react';
-import './NewTask.css'
+import axios from 'axios';
+import { v4 as uuidv4 } from "uuid";
+import './NewTask.css';
 
 export function NewTask({ setTasks }) {
     const [newInput, setNewInput] = useState("");
@@ -9,10 +10,17 @@ export function NewTask({ setTasks }) {
         setNewInput(e.target.value);
     }
 
-    const handleCreateClick = () => {
-        setTasks(prev => [...prev, {task: newInput, taskId: uuidv4()}]);
+    const handleCreateClick = async() => {
+        try {
+            const response = await axios.post("http://localhost:5000/create", {task: newInput, taskId: uuidv4()})
+            console.log(response);
+            setTasks(response.data);
+            setNewInput("");
+        } catch (err) {
+            console.error(err)
+        }
+
         
-        setNewInput("");
     }
 
     return (

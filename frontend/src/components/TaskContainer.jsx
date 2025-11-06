@@ -1,6 +1,6 @@
 import { Task } from './Task.jsx'
 
-export function TaskContainer({ tasks, setTasks}){
+export function TaskContainer({ tasks = [], setTasks}){
     return (
         <div className="task-container">
             {
